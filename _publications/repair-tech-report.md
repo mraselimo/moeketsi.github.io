@@ -13,7 +13,7 @@ target:
   link: 'http://sygus.org/comp/2018'
 
 links:
-  PDF: '%BASE_URL%/assets/pdf/report-tech-report.pdf'
+  PDF: '%BASE_URL%/assets/pdf/repair-tech-report.pdf'
 ---
 
 ###### Abstract
