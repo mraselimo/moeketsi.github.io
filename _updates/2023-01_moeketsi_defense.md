@@ -14,4 +14,4 @@ I successfully defended my thesis. =far^smile^fa=
 It was an honor to have Eric Van Wyk, Vadim Zaytsev, Cornelia Inggs,
 Bill Tucker, and my advisor Bernd Fischer (the fisch) on my committee!
 <br>
-<small>**Slides:** &nbsp; [Fault Localization and Repair for Grammarware]({{ site.baseurl }}/slides/moeketsi_defense)</small>
+<small>**Slides:** &nbsp; [Fault Localization and Repair for Grammarware]({{ site.baseurl }}/slides/moeketsi-defense)</small>
