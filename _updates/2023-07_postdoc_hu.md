@@ -11,7 +11,9 @@ photo: 'moeketsi-airport.jpg'
 headline: We are moving to Berlin (Postdoctoral Researcher)
 ---
 
-I joined Prof. Dr. Lars Grunske's Software Engineering Group at 
-[Humboldt-University Berlin][HU].
+I joined [Prof. Dr. Lars Grunske][Lars]'s [Software Engineering Group][SE] at 
+[Humboldt-Universität zu Berlin][HU].
 
 [HU]: www.hu-berlin.de
+[SE]: https://www.informatik.hu-berlin.de/de/forschung/gebiete/se
+[Lars]: https://www.informatik.hu-berlin.de/de/Members/lars-grunske
