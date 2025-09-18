@@ -1,4 +1,4 @@
-# [Personal Webpage](http://meoeketsi.github.io/)
+# [Personal Webpage](http://moeketsi.github.io/)
 
 Powered by [Jekyll].
 
