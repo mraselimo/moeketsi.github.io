@@ -1,9 +1,9 @@
-# [Personal Webpage](http://saswatpadhi.github.io/)
+# [Personal Webpage](http://meoeketsi.github.io/)
 
 Powered by [Jekyll].
 
 ### LICENSE
 
-Copyright (c) 2019-2024 Saswat Padhi, The MIT License (MIT).
+Copyright (c) 2025 Moeketsi Raselimo, The MIT License (MIT).
 
 [Jekyll]: https://jekyllrb.com/
