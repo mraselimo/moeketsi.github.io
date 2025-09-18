@@ -20,9 +20,9 @@ sass:
 
 ## Globals
 
-url:        https://saswat.padhi.me
+url:        https://moeketsi.me
 baseurl:
-repository: SaswatPadhi/saswatpadhi.github.io
+repository: mraselimo/moeketsi.github.io
 permalink:  pretty
 
 title:      'Moeketsi Raselimo'
@@ -30,10 +30,9 @@ timezone:   'Germany/Berlin'
 
 author:
   name:     'Moeketsi Raselimo'
-  link:     https://saswat.padhi.me
+  link:     https://moeketsi.me
   photo:
     alt:    'Picture at Langebaan'
-#    remote: https://avatars3.githubusercontent.com/u/1577944
     local: assets/img/photos/photo-moeketsi.jpg
 
 github: [metadata]
