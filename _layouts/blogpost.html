@@ -1,0 +1,52 @@
+---
+layout: default
+
+mathjax: true
+prismjs: true
+
+css: [ 'blogpost' ]
+---
+
+<h1>
+  <i class="fa fa-fw fa-{{ page.icon | default: layout.icon }}"></i>
+  &nbsp;<span class='small-caps clearfix'>
+    {%- include tools/text_process.md data=page.title -%}
+  </span>
+</h1>
+
+<p class='tagline'>{% include tools/text_process.md data=page.tagline %} &hellip;</p>
+
+<div class='post-header clearfix'>
+<div class='date'>{{ page.post_date | date_to_long_string }}</div>
+{% if page.categories -%}
+<span class='visible-above-medium'>
+&nbsp;&bull;&thinsp;
+{% include tools/category_links.md categories=page.categories %}
+</span>
+{%- endif -%}
+<span class='right color-faded'>
+  (&asymp; {{ content | number_of_words | round: -1 }} words
+  <b>&VerticalLine;</b>
+  {{ content | number_of_words | divided_by: 175.0 | ceil }} min.)
+</span>
+{% if page.categories -%}
+<div class='hidden-above-medium' style='margin-top:1em;'>
+  {% include tools/category_links.md categories=page.categories %}
+</div>
+{% endif %}
+</div>
+
+<div class='post-content'>
+  {% include tools/text_process.md para=true data=content %}
+</div>
+
+<hr style='margin-top:2em;'>
+
+<script src="https://utteranc.es/client.js"
+        repo="mraselimo/moeketsi.github.io"
+        issue-term="og:title"
+        label="T: comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
