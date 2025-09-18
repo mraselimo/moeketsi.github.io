@@ -1,0 +1,303 @@
+html {
+  font-size: 14px;
+  line-height: 1.375;
+
+  @include media(medium) {
+    font-size: 16px;
+  }
+}
+
+html, button, input, select, textarea,
+.pure-g [class*="pure-u"] {
+  font-family: $site-font-stack-base;
+}
+
+code, kbd, pre, samp {
+  font-family: $site-font-stack-mono;
+}
+
+.mono {
+  font-family: $site-font-stack-mono !important;
+}
+
+kbd {
+  color: #222325;
+  border-radius: 0.25rem;
+  border: 1px solid #cbcccd;
+  box-shadow: 0 2px 0 1px #cbcccd;
+  cursor: default;
+  font-size: 0.9em;
+  line-height: 1.1;
+  min-width: 0.75rem;
+  text-align: center;
+  padding: 2px 5px;
+  position: relative;
+  top: -1px;
+
+  &:active, &:focus, &:hover {
+    box-shadow: 0 1px 0 0.5px #cbcccd;
+    top: 1px;
+  }
+}
+
+blockquote {
+  font-size: 0.9em;
+  text-align: justify;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  padding: 0.25em 0.75em;
+  background: #F8F8F9;
+  border-left: 8px solid #F0F0F0;
+  border-radius: 6px;
+
+  > p.source {
+    margin: -0.3125em -0.9375em;
+    padding: 0.3125em 1em;
+    background: #F0F0F0;
+    font-size: 0.8em;
+    font-family: $site-font-stack-head;
+    text-align: left;
+    &::before {
+      content: "Source: ";
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  cursor:pointer;
+}
+
+p {
+  margin: 1em 0;
+}
+
+#{headings()}, .heading {
+  margin: 1rem 0 0.5rem 0;
+  font-family: $site-font-stack-head;
+  font-weight: bold;
+
+  + p {
+    margin-top: 0;
+  }
+
+  + pre {
+    margin-top: 0.625em !important;
+  }
+}
+@include set_heading_font_sizes();
+
+.subscript, .superscript, .small-caps {
+  font-style: unset !important;
+}
+
+.subscript {
+  vertical-align: sub;
+  font-size: 0.75em;
+}
+
+.superscript {
+  vertical-align: super;
+  font-size: 0.75em;
+}
+
+.small-caps {
+  font-variant: small-caps;
+  font-variant-numeric: oldstyle-nums;
+}
+
+abbr[title], acronym[title], .small-caps {
+  letter-spacing: 0.0625em;
+}
+
+details {
+  border: 1px solid #DADADA;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em 0.35em;
+
+  &[open] {
+    padding: 0.25em 0.5em 0;
+
+    > summary::after {
+      content: "\00A0\00A0[hide]";
+      font-variant: small-caps;
+    }
+  }
+
+  > summary::after {
+    content: "\00A0\00A0[show]";
+    font-variant: small-caps;
+  }
+
+  summary:focus, summary:active {
+    outline: none;
+  }
+}
+
+.ps-algorithmic {
+  margin: 0.25em 0 0.5em;
+
+  > .ps-block {
+    > .ps-line {
+      margin-top: 0.75em;
+
+      &:first-of-type {
+        margin-top: inherit;
+      }
+    }
+
+    .ps-comment {
+      color: #888;
+    }
+
+    .ps-linenum {
+      color: #999;
+    }
+  }
+}
+
+.tweet p::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 900;
+  content: "\F099";
+  margin-left: 0.75em;
+  margin-right: 1.5em;
+  color: #CCC;
+  transition: color 0.2s ease;
+}
+
+.tweet:active p::before, .tweet:focus p::before, 
+.tweet:hover p::before, .tweet.hovering p::before {
+  color: #38A1F3;
+}
+
+ol.custom {
+  list-style: none;
+  counter-reset: item;
+  margin-left: 0em;
+
+  > li {
+    counter-increment: item;
+
+    &::before {
+      content: var(--prefix) counter(item) ".";
+      font-weight: bold;
+      display: inline-block;
+      width: 2em;
+      margin-left: -2em;
+    }
+  }
+}
+
+.footnotes {
+  font-size: 0.9em;
+  border-top: 1px dashed #BBB;
+
+  &:first-of-type {
+    counter-reset: footnote;
+    margin-top: 1em;
+    padding-top: 0.5em;
+  }
+
+  &:last-of-type {
+    margin-bottom: 1em;
+  }
+
+  ol {
+    list-style: none;
+    margin: 0;
+
+    li {
+      counter-increment: footnote;
+
+      p {
+        display: inline;
+      }
+
+      &::before {
+        content: counter(footnote) ".";
+        display: inline-block;
+        width: 1.25em;
+        margin-left: -1.5em;
+      }
+    }
+  }
+}
+
+.definition {
+  counter-increment: theorem;
+  display: block;
+
+  font-family: $site-font-stack-head;
+  outline: 5px dotted #FAEFEF;
+  outline-offset: -3px;
+  background-color: #FAEFEF;
+  margin: 0.5em 0.25em;
+  padding: 0.5em;
+
+  p { display: inline; }
+
+  &:before {
+    content: "Definition " counter(theorem) ". ";
+    font-weight: bold;
+  }
+
+  &[name]:before {
+    content: "Definition " counter(theorem) " (" attr(name) "). ";
+  }
+}
+
+.lemma {
+  counter-increment: theorem;
+  display: block;
+
+  font-family: $site-font-stack-head;
+  outline: 4px dashed #EFEFFA;
+  outline-offset: -2px;
+  background-color: #EFEFFA;
+  margin: 0.5em 0.25em;
+  padding: 0.5em;
+
+  p { display: inline; }
+
+  &:before {
+    content: "Lemma " counter(theorem) ". ";
+    font-weight: bold;
+  }
+
+  &[name]:before {
+    content: "Lemma " counter(theorem) " (" attr(name) "). ";
+  }
+}
+
+.theorem {
+  counter-increment: theorem;
+  display: block;
+
+  font-family: $site-font-stack-head;
+  outline: 4px dashed #EFEFFA;
+  outline-offset: -2px;
+  background-color: #EFEFFA;
+  margin: 0.5em 0.25em;
+  padding: 0.5em;
+
+  p { display: inline; }
+
+  &:before {
+    content: "Theorem " counter(theorem) ". ";
+    font-weight: bold;
+  }
+
+  &[name]:before {
+    content: "Theorem " counter(theorem) " (" attr(name) "). ";
+  }
+}
+
+code.language-mermaid[data-processed='true'] svg[id^='mermaid'] p {
+  margin: unset;
+}

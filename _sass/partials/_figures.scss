@@ -1,0 +1,64 @@
+html {
+  counter-reset: figure;
+}
+
+figure {
+  padding: 0.3125em 0.5em;
+  margin: 0.25em;
+  text-align: center;
+
+  img {
+    margin: 0 auto !important;
+    display: block !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  pre {
+    margin: 0 !important;
+    &:not(&.no-highlight) {
+      margin-bottom: 0.5em !important;
+    }
+  }
+
+  figcaption {
+    font-family: $site-font-stack-head;
+  }
+  
+  figcaption:before {
+    font-family: $site-font-stack-head;
+    font-weight: bold;
+    counter-increment: figure;
+    content: 'Fig. ' counter(figure) '\00A0\2022\00A0';
+  }
+}
+
+code[data-processed='true'] {
+  display: block;
+  text-align: center;
+
+  svg[id^='mermaid'] {
+    &:has(g.svg-pan-zoom-control) {
+      min-height: 85px;
+      min-width: 75px;
+    }
+
+    @supports not #{'selector\(:has\(g.svg-pan-zoom-control\)\)'} {
+      & {
+        min-height: 85px;
+        min-width: 75px;
+      }
+    }
+  
+    g.svg-pan-zoom-control {
+      opacity: 0.25;
+      transition: opacity 0.8s ease;
+    }
+
+    &:active, &:focus, &:hover {
+      g.svg-pan-zoom-control {
+        opacity: 1;
+        transition: opacity 0.2s ease;
+      }
+    }
+  }
+}

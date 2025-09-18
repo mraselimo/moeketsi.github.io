@@ -1,0 +1,171 @@
+/*
+ Solarized Color Schemes originally by Ethan Schoonover
+ http://ethanschoonover.com/solarized
+
+ Ported for PrismJS by Hector Matos
+ Website: https://krakendev.io
+ Twitter Handle: https://twitter.com/allonsykraken)
+
+ Modified by Saswat Padhi
+*/
+
+:not(pre) > code,
+pre[class*="language-"] {
+  @include set_color_and_hover(#fdfbf6, background-color, -1%);
+  color: #657b83; /* base00 */
+
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+
+  line-height: 1.125em;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Inline transparent */
+:not(pre) > code.transparent {
+  font-family: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: inherit;
+
+  span.inline-color-wrapper {
+    margin: 0 0.75ch 0 0;
+  }
+}
+
+/* Inline not transparent */
+:not(pre) > code:not(.transparent) {
+  background-color: #faf4e8;
+  border-radius: 0.25em;
+  padding: 0.1875em .25em 0.25em;
+  margin: 0 0.05em;
+  &:active, &:focus, &:hover {
+    background-color: #faf4e8;
+  }
+}
+
+a > code {
+  color: inherit;
+}
+
+.site-container pre[data-line],
+pre[class*="language-"] {
+  padding: 0.25em 0.4em;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  margin: 1.125em 0;
+  padding: 0.25em 0.4em;
+  overflow: auto;
+  border-width: 1px;
+  border-style: dashed;
+  @include set_color_and_hover(#d69928, border-color, -10%);
+  border-radius: 0.35em;
+
+  .line-highlight {
+    margin-top: 0.29em;
+  }
+
+  .line-highlight::before, .line-highlight::after {
+    display: none;
+  }
+
+  .command-line-prompt {
+    border-right: none;
+    margin-right: 0em;
+    letter-spacing: inherit;
+    opacity: 0.8;
+
+    // FIXME: Hack to remove the last line
+    // Root cause is that command-line plugin splits on `\n`
+    // and does not discard the last empty string.
+    span:last-of-type {
+      display: none;
+    }
+  }
+
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: #93a1a1; /* base1 */
+  }
+
+  .token.punctuation {
+    color: #586e75; /* base01 */
+  }
+
+  .token.namespace {
+    opacity: .7;
+  }
+
+  .token.property,
+  .token.tag,
+  .token.boolean,
+  .token.number,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+    color: #268bd2; /* blue */
+  }
+
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.url,
+  .token.inserted {
+    color: #6c8800; /* green */
+  }
+
+  .token.entity {
+    color: #657b83; /* base00 */
+    background: #eee8d5; /* base2 */
+  }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword {
+    color: #a57c00; /* yellow */
+  }
+
+  .token.function,
+  .token.operator,
+  .token.class-name {
+    color: #2aa198; /* cyan */
+  }
+
+  .token.regex,
+  .token.important {
+    color: #cb4b16; /* orange */
+  }
+
+  .token.variable {
+    color: #6c71c4; /* violet */
+  }
+
+  .token.important,
+  .token.bold {
+    font-weight: bold;
+  }
+  .token.italic {
+    font-style: italic;
+  }
+
+  .token.entity {
+    cursor: help;
+  }
+}
