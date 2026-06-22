@@ -4,7 +4,7 @@ layout: pdf-view
 icon: file-invoice
 title: Résumé
 
-pdf: '%BASE_URL%/assets/pdf/moeketsi-cv.pdf'
+pdf: '%BASE_URL%/assets/pdf/moeketsi-resume.pdf'
 ---
 
 ##### For a curriculum vitae, please [click here](../CV/).
